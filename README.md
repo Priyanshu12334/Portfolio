@@ -2,19 +2,6 @@
 
 A personal portfolio website showcasing my skills, projects, certifications, and contact information.
 
-## Features
-
-- About Me Section
-- Skills Showcase
-- Projects Section
-- Certifications
-- Notes
-- Resume Download
-- Contact Form
-
-## Live Demo
-
-https://priyanshu12334.github.io/Portfolio/
 
 ## Contact
 
