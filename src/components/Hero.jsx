@@ -14,7 +14,7 @@ export default function Hero() {
             Full Stack Developer <span className="hero__subtitle-separator">|</span> MERN Stack Developer
           </h2>
           <p className="hero__description">
-            B.Tech CSE Graduate and Full Stack Developer passionate about building scalable, production-grade web applications using <strong>React.js</strong>, <strong>Node.js</strong>, <strong>Express.js</strong>, and <strong>MongoDB</strong>. Focused on clean architecture, RESTful API design, debugging, and intuitive user experiences.
+            B.Tech CSE Graduate and Full Stack Developer passionate about building scalable, production-grade web applications using <strong>React.js</strong>, <strong>Node.js</strong>, <strong>Express.js</strong>, and <strong>MongoDB</strong>. Focused on building clean architectures and RESTful APIs, with experience in JWT authentication, authorization, real-time features, AI integration, debugging, and user-friendly web applications.
           </p>
 
           <div className="hero__buttons">
