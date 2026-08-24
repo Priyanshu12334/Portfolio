@@ -1,76 +1,71 @@
-/*===== MENU SHOW =====*/ 
-const showMenu = (toggleId, navId) =>{
-  const toggle = document.getElementById(toggleId),
-  nav = document.getElementById(navId)
+/* ==================== MOBILE MENU TOGGLE ==================== */
+const navMenu = document.getElementById('nav-menu');
+const navToggle = document.getElementById('nav-toggle');
+const navClose = document.getElementById('nav-close');
 
-  if(toggle && nav){
-      toggle.addEventListener('click', ()=>{
-          nav.classList.toggle('show')
-      })
-  }
-}
-showMenu('nav-toggle','nav-menu')
-
-/*===== REMOVE MENU MOBILE =====*/
-const navLink = document.querySelectorAll('.nav__link')
-
-function linkAction(){
-  const navMenu = document.getElementById('nav-menu')
-  navMenu.classList.remove('show')
-}
-navLink.forEach(n => n.addEventListener('click', linkAction))
-
-/*===== SCROLL SECTIONS ACTIVE LINK =====*/
-const sections = document.querySelectorAll('section[id]')
-
-window.addEventListener('scroll', scrollActive)
-
-function scrollActive(){
-  const scrollY = window.pageYOffset
-
-  sections.forEach(current =>{
-      const sectionHeight = current.offsetHeight
-      const sectionTop = current.offsetTop - 50;
-      sectionId = current.getAttribute('id')
-
-      if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-          document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active')
-      }else{
-          document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active')
-      }
-  })
+/* Show menu */
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.add('show-menu');
+    });
 }
 
-/*===== SCROLL REVEAL ANIMATION =====*/
-const sr = ScrollReveal({
-  origin: 'top',
-  distance: '80px',
-  duration: 2000,
-  reset: true
-})
+/* Hide menu */
+if (navClose) {
+    navClose.addEventListener('click', () => {
+        navMenu.classList.remove('show-menu');
+    });
+}
 
-/*SCROLL HOME*/
-sr.reveal('.home__title', {})
-sr.reveal('.home__scroll', {delay: 200})
-sr.reveal('.home__img', {origin:'right', delay: 400})
+/* Remove menu on mobile link click */
+const navLinks = document.querySelectorAll('.nav__link');
 
-/*SCROLL ABOUT*/
-sr.reveal('.about__img', {delay: 500})
-sr.reveal('.about__subtitle', {delay: 300})
-sr.reveal('.about__profession', {delay: 400})
-sr.reveal('.about__text', {delay: 500})
-sr.reveal('.about__social-icon', {delay: 600, interval: 200})
+const linkAction = () => {
+    if (navMenu) {
+        navMenu.classList.remove('show-menu');
+    }
+};
+navLinks.forEach(n => n.addEventListener('click', linkAction));
 
-/*SCROLL SKILLS*/
-sr.reveal('.skills__subtitle', {})
-sr.reveal('.skills__name', {distance: '20px', delay: 50, interval: 100})
-sr.reveal('.skills__img', {delay: 400})
+/* Close menu when clicking outside */
+document.addEventListener('click', (e) => {
+    if (navMenu && navMenu.classList.contains('show-menu')) {
+        if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+            navMenu.classList.remove('show-menu');
+        }
+    }
+});
 
-/*SCROLL PORTFOLIO*/
-sr.reveal('.portfolio__img', {interval: 200})
+/* ==================== CHANGE HEADER BACKGROUND ON SCROLL ==================== */
+const scrollHeader = () => {
+    const header = document.getElementById('header');
+    if (window.scrollY >= 50) {
+        header.classList.add('header--scrolled');
+    } else {
+        header.classList.remove('header--scrolled');
+    }
+};
+window.addEventListener('scroll', scrollHeader);
 
-/*SCROLL CONTACT*/
-sr.reveal('.contact__subtitle', {})
-sr.reveal('.contact__text', {interval: 200})
-sr.reveal('.contact__input', {delay: 400})
-sr.reveal('.contact__button', {delay: 600})
+/* ==================== SCROLL SECTIONS ACTIVE LINK ==================== */
+const sections = document.querySelectorAll('section[id]');
+
+const scrollActive = () => {
+    const scrollDown = window.scrollY;
+
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 100;
+        const sectionId = current.getAttribute('id');
+        const sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']');
+
+        if (sectionsClass) {
+            if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
+                sectionsClass.classList.add('active');
+            } else {
+                sectionsClass.classList.remove('active');
+            }
+        }
+    });
+};
+window.addEventListener('scroll', scrollActive);
