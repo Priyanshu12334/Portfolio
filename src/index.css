@@ -458,10 +458,10 @@ button, input, textarea {
   flex-wrap: wrap;
 }
 
-/* ==================== SKILLS SECTION (COMPACT) ==================== */
+/* ==================== SKILLS SECTION (COMPACT & BALANCED) ==================== */
 .skills__grid--compact {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
   width: 100%;
 }
@@ -1158,6 +1158,12 @@ button, input, textarea {
 
   .footer__container {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .skills__grid--compact {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

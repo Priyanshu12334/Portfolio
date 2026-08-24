@@ -1,11 +1,16 @@
 import React from 'react';
-import { Layout, Server, Database, Wrench } from 'lucide-react';
+import { Code, Layout, Server, Database, Wrench } from 'lucide-react';
 
 const skillCategories = [
   {
+    title: 'Programming',
+    icon: <Code size={18} />,
+    skills: ['C++', 'JavaScript', 'TypeScript'],
+  },
+  {
     title: 'Frontend',
     icon: <Layout size={18} />,
-    skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Tailwind CSS'],
+    skills: ['HTML', 'CSS', 'React', 'Tailwind CSS'],
   },
   {
     title: 'Backend',
