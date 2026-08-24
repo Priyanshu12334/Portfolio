@@ -5,13 +5,13 @@ export default function Experience() {
   return (
     <section className="experience section" id="experience">
       <div className="container">
-        <div className="section__header">
+        <div className="section__header reveal">
           <span className="section__subtitle">Career History</span>
           <h2 className="section__title">Work Experience</h2>
         </div>
 
         <div className="experience__timeline">
-          <div className="timeline__item">
+          <div className="timeline__item reveal">
             <div className="timeline__marker">
               <Briefcase size={18} />
             </div>

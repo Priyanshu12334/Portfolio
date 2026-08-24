@@ -28,14 +28,14 @@ export default function Skills() {
   return (
     <section className="skills section" id="skills">
       <div className="container">
-        <div className="section__header">
+        <div className="section__header reveal">
           <span className="section__subtitle">Technical Expertise</span>
           <h2 className="section__title">Skills</h2>
         </div>
 
         <div className="skills__grid skills__grid--compact">
           {skillCategories.map((cat) => (
-            <div key={cat.title} className="skills__card skills__card--compact">
+            <div key={cat.title} className="skills__card skills__card--compact reveal">
               <div className="skills__card-header">
                 <div className="skills__icon-wrapper">{cat.icon}</div>
                 <h3 className="skills__card-title">{cat.title}</h3>

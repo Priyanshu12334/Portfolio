@@ -5,13 +5,13 @@ export default function Education() {
   return (
     <section className="education section" id="education">
       <div className="container">
-        <div className="section__header">
+        <div className="section__header reveal">
           <span className="section__subtitle">Academic Background</span>
           <h2 className="section__title">Education</h2>
         </div>
 
         <div className="education__grid">
-          <div className="education__card">
+          <div className="education__card reveal">
             <div className="education__icon">
               <GraduationCap size={28} />
             </div>

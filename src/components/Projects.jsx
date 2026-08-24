@@ -41,14 +41,14 @@ export default function Projects() {
   return (
     <section className="projects section" id="projects">
       <div className="container">
-        <div className="section__header">
+        <div className="section__header reveal">
           <span className="section__subtitle">Featured Work</span>
           <h2 className="section__title">Featured Projects</h2>
         </div>
 
         <div className="projects__grid">
           {projects.map((project) => (
-            <article key={project.title} className="project__card">
+            <article key={project.title} className="project__card reveal">
               <div className="project__img-container">
                 <img
                   src={project.image}

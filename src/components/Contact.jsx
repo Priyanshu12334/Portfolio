@@ -6,12 +6,12 @@ export default function Contact() {
     <section className="contact section" id="contact">
       <div className="container">
         <div className="contact__wrapper">
-          <div className="section__header">
+          <div className="section__header reveal">
             <span className="section__subtitle">Get In Touch</span>
             <h2 className="section__title">Contact Me</h2>
           </div>
 
-          <div className="contact__card">
+          <div className="contact__card reveal">
             <h3 className="contact__heading">Let's Connect</h3>
             <p className="contact__subtext">
               I am open to full-time roles, software engineering internships, and project collaborations. Feel free to reach out directly via email, phone, or social profiles!
@@ -22,9 +22,9 @@ export default function Contact() {
                 <div className="contact__icon-box">
                   <Mail size={20} />
                 </div>
-                <div>
+                <div className="contact__item-info">
                   <span className="contact__label">Email</span>
-                  <span className="contact__value">suyalpriyanshu2@gmail.com</span>
+                  <span className="contact__value email-value">suyalpriyanshu2@gmail.com</span>
                 </div>
               </a>
 
@@ -32,7 +32,7 @@ export default function Contact() {
                 <div className="contact__icon-box">
                   <Phone size={20} />
                 </div>
-                <div>
+                <div className="contact__item-info">
                   <span className="contact__label">Phone</span>
                   <span className="contact__value">+91 8006084643</span>
                 </div>
