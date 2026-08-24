@@ -12,37 +12,6 @@ Hi, I'm **Priyanshu Suyal**, a B.Tech CSE Graduate and Full Stack Developer spec
 
 I enjoy building scalable web applications, designing RESTful APIs, working with databases, implementing authentication and authorization, and debugging real-world application issues.
 
-## 🛠️ Tech Stack
-
-### Frontend
-- React.js
-- Vite
-- JavaScript
-- HTML5
-- CSS3
-- Responsive Design
-
-### Backend
-- Node.js
-- Express.js
-- RESTful APIs
-
-### Database
-- MongoDB
-- Mongoose
-
-### Authentication & Real-Time
-- JWT Authentication
-- Role-Based Access Control (RBAC)
-- Socket.IO
-
-### Tools & Deployment
-- Git
-- GitHub
-- Docker
-- Vercel
-- Render
-
 ## ✨ Features
 
 - Responsive portfolio design
