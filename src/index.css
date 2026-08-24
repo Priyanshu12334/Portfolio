@@ -458,25 +458,37 @@ button, input, textarea {
   flex-wrap: wrap;
 }
 
-/* ==================== SKILLS SECTION (COMPACT & BALANCED) ==================== */
+/* ==================== SKILLS SECTION (EXACT 2-ROW DESKTOP LAYOUT) ==================== */
 .skills__grid--compact {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 1.25rem;
   width: 100%;
 }
 
 .skills__card--compact {
+  grid-column: span 2;
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   transition: border-color var(--transition-normal);
   max-width: 100%;
 }
 
 .skills__card--compact:hover {
   border-color: var(--accent-color);
+}
+
+.skills__card--compact:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.skills__card--compact:nth-child(5) {
+  grid-column: 4 / span 2;
 }
 
 .skills__card--compact .skills__card-header {
@@ -1164,6 +1176,12 @@ button, input, textarea {
 @media screen and (max-width: 992px) {
   .skills__grid--compact {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills__card--compact,
+  .skills__card--compact:nth-child(4),
+  .skills__card--compact:nth-child(5) {
+    grid-column: auto;
   }
 }
 
