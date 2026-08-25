@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, Github, Code2 } from 'lucide-react';
+import { Linkedin, Github, Instagram } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -49,12 +49,12 @@ export default function Footer() {
               <Github size={18} />
             </a>
             <a
-              href="https://leetcode.com/u/Priyanshu_suyal_/"
+              href="https://www.instagram.com/priyanshu_suyal_?igsi=MW54MmNqYzhyeTlpOA=="
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LeetCode"
+              aria-label="Instagram"
             >
-              <Code2 size={18} />
+              <Instagram size={18} />
             </a>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, ArrowRight, Github, Linkedin, Code2 } from 'lucide-react';
+import { Download, ArrowRight, Github, Linkedin, Instagram } from 'lucide-react';
 import myPhoto from '../assets/my.png';
 
 export default function Hero() {
@@ -14,7 +14,7 @@ export default function Hero() {
             Full Stack Developer <span className="hero__subtitle-separator">|</span> MERN Stack Developer
           </h2>
           <p className="hero__description">
-            B.Tech CSE Graduate and Full Stack Developer passionate about building scalable, production-grade web applications using <strong>React.js</strong>, <strong>Node.js</strong>, <strong>Express.js</strong>, and <strong>MongoDB</strong>. Focused on building clean architectures and RESTful APIs, with experience in JWT authentication, authorization, real-time features, AI integration, debugging, and user-friendly web applications.
+            B.Tech CSE Graduate and Full Stack Developer focused on building modern, scalable web applications with AI integration.
           </p>
 
           <div className="hero__buttons">
@@ -55,13 +55,13 @@ export default function Hero() {
                 <Github size={20} />
               </a>
               <a
-                href="https://leetcode.com/u/Priyanshu_suyal_/"
+                href="https://www.instagram.com/priyanshu_suyal_?igsi=MW54MmNqYzhyeTlpOA=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
-                aria-label="LeetCode Profile"
+                aria-label="Instagram Profile"
               >
-                <Code2 size={20} />
+                <Instagram size={20} />
               </a>
             </div>
           </div>

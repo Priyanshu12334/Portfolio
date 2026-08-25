@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, Linkedin, Github, Code2, Send } from 'lucide-react';
+import { Mail, Phone, Linkedin, Github, Instagram, Send } from 'lucide-react';
 
 export default function Contact() {
   return (
@@ -59,13 +59,13 @@ export default function Contact() {
                 <Github size={20} />
               </a>
               <a
-                href="https://leetcode.com/u/Priyanshu_suyal_/"
+                href="https://www.instagram.com/priyanshu_suyal_?igsi=MW54MmNqYzhyeTlpOA=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
-                aria-label="LeetCode"
+                aria-label="Instagram"
               >
-                <Code2 size={20} />
+                <Instagram size={20} />
               </a>
             </div>
 

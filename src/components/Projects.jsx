@@ -6,7 +6,7 @@ import chatAppImg from '../assets/chat-app.png';
 
 const projects = [
   {
-    title: 'TaskPilot',
+    title: 'TaskPilot - Collaborative Task Management Platform',
     description:
       'MERN task management platform with JWT authentication, RBAC, real-time Socket.IO chat, analytics dashboard, and Docker containerization.',
     image: taskpilotImg,
@@ -16,7 +16,7 @@ const projects = [
     githubUrl: 'https://github.com/Priyanshu12334/taskpilot',
   },
   {
-    title: 'AI Health Companion',
+    title: 'Wellora – AI Health Companion',
     description:
       'AI health application powered by Groq API, featuring OCR medical report simplification, an intelligent nutrition engine, and health tracking.',
     image: aiHealthImg,
@@ -26,7 +26,7 @@ const projects = [
     githubUrl: 'https://github.com/Priyanshu12334/ai-health-companion',
   },
   {
-    title: 'Real-Time Chat Application',
+    title: 'ChatCrypt - Realtime Chat Application',
     description:
       'Real-time messaging platform using Socket.IO, WebSockets, MongoDB data persistence, and secure JWT authentication.',
     image: chatAppImg,
