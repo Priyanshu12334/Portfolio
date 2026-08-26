@@ -19,7 +19,7 @@ const skillCategories = [
   {
     title: 'Databases',
     icon: <Database size={18} />,
-    skills: ['MongoDB', 'MySql'],
+    skills: ['MongoDB', 'MySQL'],
   },
   {
     title: 'Tools',
