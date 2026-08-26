@@ -1,4 +1,3 @@
-import React from 'react';
 import { Linkedin, Github, Instagram } from 'lucide-react';
 
 export default function Footer() {
@@ -11,7 +10,7 @@ export default function Footer() {
             <span className="nav__logo-accent">Suyal</span>
           </a>
           <p className="footer__desc">
-            MERN Stack Developer committed to building performant, modern, and scalable web solutions.
+            Full Stack Developer specializing in MERN stack, focused on building modern, scalable, and high-performance web applications.
           </p>
         </div>
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mail, Phone, Linkedin, Github, Instagram, Send } from 'lucide-react';
 
 export default function Contact() {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Award, FolderOpen, Code2, ExternalLink } from 'lucide-react';
 
 export default function Certifications() {

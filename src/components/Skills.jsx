@@ -1,4 +1,3 @@
-import React from 'react';
 import { Code, Layout, Server, Database, Wrench } from 'lucide-react';
 
 const skillCategories = [
@@ -18,9 +17,9 @@ const skillCategories = [
     skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT', 'Socket.IO'],
   },
   {
-    title: 'Database',
+    title: 'Databases',
     icon: <Database size={18} />,
-    skills: ['MongoDB', 'MySql', 'SQL'],
+    skills: ['MongoDB', 'MySql'],
   },
   {
     title: 'Tools',

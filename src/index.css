@@ -1164,6 +1164,10 @@ button, input, textarea {
     gap: 2.5rem;
   }
 
+  .hero__subtitle {
+    justify-content: center;
+  }
+
   .hero__description {
     margin-left: auto;
     margin-right: auto;

@@ -1,4 +1,3 @@
-import React from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import taskpilotImg from '../assets/taskpilot.png';
 import aiHealthImg from '../assets/ai-health.png';

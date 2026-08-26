@@ -1,4 +1,3 @@
-import React from 'react';
 import { Download, ArrowRight, Github, Linkedin, Instagram } from 'lucide-react';
 import myPhoto from '../assets/my.png';
 
