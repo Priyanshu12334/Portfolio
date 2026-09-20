@@ -7,10 +7,10 @@ const projects = [
   {
     title: 'TaskPilot - Collaborative Task Management Platform',
     description:
-      'MERN task management platform with JWT authentication, RBAC, real-time Socket.IO chat, analytics dashboard, and Docker containerization.',
+      'A collaborative task management platform with JWT authentication, RBAC, Redis caching, Socket.io, Gemini API for task description generation, analytics dashboard, and Docker containerization.',
     image: taskpilotImg,
     badge: 'Featured',
-    tech: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Socket.IO', 'JWT', 'RBAC', 'Docker'],
+    tech: ['MongoDB', 'Redis', 'Express.js', 'React', 'Node.js', 'Recharts', 'Tailwind CSS', 'Rest API', 'Socket.io', 'JWT Authentication', 'RBAC', 'Docker', 'Gemini API'],
     liveUrl: 'https://taskpilot-ivory.vercel.app/',
     githubUrl: 'https://github.com/Priyanshu12334/taskpilot',
   },
@@ -20,17 +20,17 @@ const projects = [
       'AI health application powered by Groq API, featuring OCR medical report simplification, an intelligent nutrition engine, and health tracking.',
     image: aiHealthImg,
     badge: 'AI Powered',
-    tech: ['React', 'Node.js', 'Express.js', 'Groq API', 'OCR Engine', 'MongoDB'],
+    tech: ['React', 'Node.js', 'Express.js', 'Groq API', 'Tailwind CSS', 'Recharts','MongoDB', 'Rest API', 'JWT Authentication'],
     liveUrl: 'https://ai-health-companion-phi.vercel.app/',
     githubUrl: 'https://github.com/Priyanshu12334/ai-health-companion',
   },
   {
     title: 'ChatCrypt - Realtime Chat Application',
     description:
-      'Real-time messaging platform using Socket.IO, WebSockets, MongoDB data persistence, and secure JWT authentication.',
+      'Real-time messaging platform using Socket.IO, MongoDB data persistence, and secure JWT authentication.',
     image: chatAppImg,
     badge: 'Real-Time',
-    tech: ['React', 'Node.js', 'Express.js', 'Socket.IO', 'WebSockets', 'MongoDB', 'JWT'],
+    tech: ['React', 'Node.js', 'Express.js','Tailwind CSS', 'Socket.IO', 'Rest API', 'MongoDB', 'JWT Authentication'],
     liveUrl: 'https://fullstack-chat-app-seven-tawny.vercel.app/',
     githubUrl: 'https://github.com/Priyanshu12334/fullstack-chat-app',
   },

@@ -10,7 +10,7 @@ export default function Hero() {
             Hi, I'm <span className="nav__logo-accent">Priyanshu Suyal</span>
           </h1>
           <h2 className="hero__subtitle">
-            Full Stack Developer <span className="hero__subtitle-separator">|</span> MERN Stack Developer
+            Full Stack Developer <span className="hero__subtitle-separator">|</span> MERN Stack
           </h2>
           <p className="hero__description">
             B.Tech CSE Graduate and Full Stack Developer focused on building modern, scalable web applications with AI integration.

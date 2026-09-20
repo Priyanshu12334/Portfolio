@@ -9,7 +9,7 @@ export default function About() {
           <h2 className="section__title about__title">About Me</h2>
 
           <h3 className="about__heading">
-            Full Stack Developer <span className="hero__subtitle-separator">|</span> MERN Stack Developer
+            Full Stack Developer <span className="hero__subtitle-separator">|</span> MERN Stack
           </h3>
 
           <p className="about__text">
