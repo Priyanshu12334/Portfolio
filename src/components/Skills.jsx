@@ -14,12 +14,12 @@ const skillCategories = [
   {
     title: 'Backend',
     icon: <Server size={18} />,
-    skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT Authentication', 'Socket.IO', 'Gemini API', 'Groq API'],
+    skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT Authentication', 'RBAC','Socket.IO', 'Gemini API', 'Groq API'],
   },
   {
     title: 'Databases & Caching',
     icon: <Database size={18} />,
-    skills: ['MongoDB', 'MySQL', 'Redis'],
+    skills: ['MongoDB', 'Mongoose', 'MySQL', 'SQL', 'Redis'],
   },
   {
     title: 'Tools & Platforms',
