@@ -1,4 +1,5 @@
 import { Award, FolderOpen, Code2, ExternalLink } from 'lucide-react';
+import { SiLeetcode } from 'react-icons/si';
 
 export default function Certifications() {
   return (
@@ -67,7 +68,7 @@ export default function Certifications() {
                 rel="noopener noreferrer"
                 className="btn btn--small btn--outline"
               >
-                <ExternalLink size={16} />
+                <SiLeetcode size={16} color="#FFA116" />
                 <span>View LeetCode Profile</span>
               </a>
             </div>

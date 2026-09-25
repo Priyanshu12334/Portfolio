@@ -1,4 +1,6 @@
-import { Download, ArrowRight, Github, Linkedin, Instagram } from 'lucide-react';
+import { Download, ArrowRight } from 'lucide-react';
+import { FaLinkedinIn } from 'react-icons/fa6';
+import { SiGithub, SiInstagram } from 'react-icons/si';
 import myPhoto from '../assets/my.png';
 
 export default function Hero() {
@@ -42,7 +44,7 @@ export default function Hero() {
                 className="social-icon"
                 aria-label="LinkedIn Profile"
               >
-                <Linkedin size={20} />
+                <FaLinkedinIn size={20} color="#0A66C2" />
               </a>
               <a
                 href="https://github.com/Priyanshu12334"
@@ -51,7 +53,7 @@ export default function Hero() {
                 className="social-icon"
                 aria-label="GitHub Profile"
               >
-                <Github size={20} />
+                <SiGithub size={20} color="#f0f6fc" />
               </a>
               <a
                 href="https://www.instagram.com/priyanshu_suyal_?igsi=MW54MmNqYzhyeTlpOA=="
@@ -60,7 +62,7 @@ export default function Hero() {
                 className="social-icon"
                 aria-label="Instagram Profile"
               >
-                <Instagram size={20} />
+                <SiInstagram size={20} color="#E4405F" />
               </a>
             </div>
           </div>

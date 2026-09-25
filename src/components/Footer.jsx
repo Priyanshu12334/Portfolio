@@ -1,4 +1,5 @@
-import { Linkedin, Github, Instagram } from 'lucide-react';
+import { FaLinkedinIn } from 'react-icons/fa6';
+import { SiGithub, SiInstagram } from 'react-icons/si';
 
 export default function Footer() {
   return (
@@ -37,7 +38,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               aria-label="LinkedIn"
             >
-              <Linkedin size={18} />
+              <FaLinkedinIn size={18} color="#0A66C2" />
             </a>
             <a
               href="https://github.com/Priyanshu12334"
@@ -45,7 +46,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               aria-label="GitHub"
             >
-              <Github size={18} />
+              <SiGithub size={18} color="#f0f6fc" />
             </a>
             <a
               href="https://www.instagram.com/priyanshu_suyal_?igsi=MW54MmNqYzhyeTlpOA=="
@@ -53,7 +54,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               aria-label="Instagram"
             >
-              <Instagram size={18} />
+              <SiInstagram size={18} color="#E4405F" />
             </a>
           </div>
         </div>

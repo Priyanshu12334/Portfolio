@@ -1,4 +1,6 @@
-import { Mail, Phone, Linkedin, Github, Instagram, Send } from 'lucide-react';
+import { Mail, Phone, Send } from 'lucide-react';
+import { FaLinkedinIn } from 'react-icons/fa6';
+import { SiGithub, SiInstagram } from 'react-icons/si';
 
 export default function Contact() {
   return (
@@ -46,7 +48,7 @@ export default function Contact() {
                 className="social-icon"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={20} />
+                <FaLinkedinIn size={20} color="#0A66C2" />
               </a>
               <a
                 href="https://github.com/Priyanshu12334"
@@ -55,7 +57,7 @@ export default function Contact() {
                 className="social-icon"
                 aria-label="GitHub"
               >
-                <Github size={20} />
+                <SiGithub size={20} color="#f0f6fc" />
               </a>
               <a
                 href="https://www.instagram.com/priyanshu_suyal_?igsi=MW54MmNqYzhyeTlpOA=="
@@ -64,7 +66,7 @@ export default function Contact() {
                 className="social-icon"
                 aria-label="Instagram"
               >
-                <Instagram size={20} />
+                <SiInstagram size={20} color="#E4405F" />
               </a>
             </div>
 
