@@ -2,7 +2,7 @@ import { ExternalLink } from 'lucide-react';
 import { SiGithub } from 'react-icons/si';
 import aiHealthImg from '../assets/ai-health.png';
 import chatAppImg from '../assets/chat-app.png';
-import TaskPilot from '../assets/TaskPilot.png';
+import TaskPilot from '../assets/taskpilot.png';
 
 const projects = [
   {
