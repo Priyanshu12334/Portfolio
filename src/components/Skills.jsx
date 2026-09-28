@@ -12,6 +12,7 @@ import {
   SiMongoose,
   SiMysql,
   SiNodedotjs,
+  SiPostgresql,
   SiPostman,
   SiReact,
   SiRedis,
@@ -43,6 +44,7 @@ const skillIcons = {
   'Groq API': { icon: Zap, color: '#a1a1aa' },
   MongoDB: { icon: SiMongodb, color: '#47a248' },
   Mongoose: { icon: SiMongoose, color: '#880000' },
+  PostgreSQL: { icon: SiPostgresql, color: '#336791' },
   MySQL: { icon: SiMysql, color: '#4479a1' },
   SQL: { icon: Database, color: '#a1a1aa' },
   Redis: { icon: SiRedis, color: '#dc382d' },
@@ -76,7 +78,7 @@ const skillCategories = [
   {
     title: 'Databases & Caching',
     icon: <Database size={18} />,
-    skills: ['MongoDB', 'Mongoose', 'MySQL', 'SQL', 'Redis'],
+    skills: ['MongoDB', 'PostgreSQL', 'MySQL', 'SQL', 'Redis'],
   },
   {
     title: 'Tools & Platforms',
