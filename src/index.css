@@ -72,6 +72,19 @@ a {
   transition: color var(--transition-fast);
 }
 
+a:focus, button:focus {
+  outline: none;
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--text-secondary);
+  outline-offset: 2px;
+}
+
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -151,14 +164,14 @@ button, input, textarea {
 .btn--primary {
   background-color: var(--accent-color);
   color: #ffffff;
-  box-shadow: var(--shadow-accent);
+  box-shadow: 0 3px 10px rgba(59, 130, 246, 0.24);
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .btn--primary:hover {
   background-color: var(--accent-color);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.45);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.28);
 }
 
 .btn--outline {
@@ -168,9 +181,6 @@ button, input, textarea {
 }
 
 .btn--outline:hover {
-  background-color: var(--bg-card-hover);
-  border-color: var(--accent-color);
-  color: var(--accent-color);
   transform: translateY(-2px);
 }
 
@@ -202,7 +212,6 @@ button, input, textarea {
 
 .social-icon:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-accent);
 }
 
 /* ==================== NAVBAR ==================== */
@@ -259,7 +268,7 @@ button, input, textarea {
   position: relative;
 }
 
-.nav__link:hover, .nav__link.active {
+.nav__link.active {
   color: var(--text-primary);
 }
 
@@ -482,6 +491,11 @@ button, input, textarea {
   border-color: var(--accent-color);
 }
 
+.skills__card--compact:focus-within {
+  outline: 2px solid var(--bg-card-hover);
+  outline-offset: 2px;
+}
+
 .skills__card--compact:nth-child(4) {
   grid-column: 2 / span 2;
 }
@@ -571,6 +585,11 @@ button, input, textarea {
   transform: translateY(-4px);
   border-color: var(--accent-color);
   box-shadow: var(--shadow-accent);
+}
+
+.project__card:focus-within {
+  outline: 2px solid var(--bg-card-hover);
+  outline-offset: 2px;
 }
 
 .project__img-container {
@@ -716,6 +735,7 @@ button, input, textarea {
 .timeline__role {
   font-size: 1.15rem;
   font-weight: 700;
+  margin-bottom: 0.35rem;
   overflow-wrap: break-word;
 }
 
@@ -751,6 +771,10 @@ button, input, textarea {
 .timeline__details li {
   margin-bottom: 0.4rem;
   overflow-wrap: break-word;
+}
+
+.timeline__documents {
+  margin-top: 0.85rem;
 }
 
 /* ==================== EDUCATION SECTION ==================== */
@@ -846,6 +870,12 @@ button, input, textarea {
   margin: 0 auto;
 }
 
+.certifications__leetcode-button {
+  background-color: #09090b;
+  border-color: var(--border-color);
+  color: #ffffff;
+}
+
 .cert-card-two {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -861,6 +891,26 @@ button, input, textarea {
 .cert-card-two:hover {
   border-color: var(--accent-color);
   transform: translateY(-2px);
+}
+
+.skills__card--compact:hover,
+.skills__card--compact:active,
+.project__card:hover,
+.project__card:active,
+.cert-card-two:hover,
+.cert-card-two:active {
+  border-color: var(--border-color);
+}
+
+.certifications .cert-card-two:focus,
+.certifications .cert-card-two a:focus {
+  outline: none;
+}
+
+.certifications .cert-card-two:focus-visible,
+.certifications .cert-card-two a:focus-visible {
+  outline: 2px solid var(--bg-card-hover);
+  outline-offset: 2px;
 }
 
 .cert-card-two__header {
@@ -1010,10 +1060,6 @@ button, input, textarea {
   overflow: hidden;
 }
 
-.contact__item-card:hover {
-  border-color: var(--accent-color);
-}
-
 .contact__item-info {
   display: flex;
   flex-direction: column;
@@ -1115,10 +1161,6 @@ button, input, textarea {
   font-size: 0.875rem;
   font-weight: 500;
   white-space: nowrap;
-}
-
-.footer__links a:hover {
-  color: var(--accent-color);
 }
 
 .footer__socials {

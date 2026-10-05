@@ -1,4 +1,4 @@
-import { Briefcase } from 'lucide-react';
+import { Briefcase, FolderOpen } from 'lucide-react';
 
 export default function Experience() {
   return (
@@ -19,14 +19,14 @@ export default function Experience() {
                 <div>
                   <h3 className="timeline__role">MERN Stack Developer Intern</h3>
                   <h4 className="timeline__company">
-                    Webstack Academy <span className="timeline__type">• Remote</span>
+                    The Entrepreneurship Network <span className="timeline__type">• Remote</span>
                   </h4>
                 </div>
-                <span className="timeline__date">Jun 2026 – Jul 2026</span>
+                <span className="timeline__date">Jul 2026 – Oct 2026</span>
               </div>
               <ul className="timeline__details">
                 <li>
-                  Built and maintained web applications using MongoDB, Express.js, React, and Node.js.
+                  Built and maintained web applications using React, Node.js, Express.js, and MongoDB.
                 </li>
                 <li>
                   Implemented authentication and authorization using JWT and RBAC.
@@ -34,10 +34,18 @@ export default function Experience() {
                 <li>
                   Used Git/GitHub for version control and collaborative development.
                 </li>
-                <li>
-                  Worked with Vercel and Render for deployment.
-                </li>
               </ul>
+              <div className="timeline__documents">
+                <a
+                  href="https://drive.google.com/drive/folders/1o7HHg73INfLTHqYlxgOUT8VojL6WnZo8?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn--small btn--outline"
+                >
+                  <FolderOpen size={16} />
+                  <span>View Documents</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

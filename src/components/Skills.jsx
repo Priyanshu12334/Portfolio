@@ -61,7 +61,7 @@ const skillIcons = {
 
 const skillCategories = [
   {
-    title: 'Programming',
+    title: 'Programming Languages',
     icon: <Code size={18} />,
     skills: ['JavaScript (ES6+)', 'TypeScript', 'C++'],
   },

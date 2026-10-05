@@ -34,7 +34,7 @@ export default function Certifications() {
                 href="https://drive.google.com/drive/folders/1-_GMiac0KHXIxqb0jUAl1mTZn3uASBDY?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn--small btn--primary"
+                className="btn btn--small btn--outline"
               >
                 <FolderOpen size={16} />
                 <span>View Certificates</span>
@@ -66,7 +66,7 @@ export default function Certifications() {
                 href="https://leetcode.com/u/Priyanshu_suyal_/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn--small btn--outline"
+                className="btn btn--small btn--outline certifications__leetcode-button"
               >
                 <SiLeetcode size={16} color="#FFA116" />
                 <span>View LeetCode Profile</span>

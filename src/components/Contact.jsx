@@ -15,7 +15,7 @@ export default function Contact() {
           <div className="contact__card reveal">
             <h3 className="contact__heading">Let's Connect</h3>
             <p className="contact__subtext">
-              I am open to full-time roles, software engineering internships, and project collaborations. Feel free to reach out directly via email, phone, or social profiles!
+             I am open to full-time software development roles, internships, and project collaborations. Feel free to reach out via email, phone, or social profiles.
             </p>
 
             <div className="contact__grid">
