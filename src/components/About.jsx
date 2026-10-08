@@ -13,7 +13,7 @@ export default function About() {
           </h3>
 
           <p className="about__text">
-            I’m a Full Stack Developer experienced in building web applications using React.js, Node.js, Express.js, and MongoDB. I enjoy developing REST APIs, authentication and authorization systems, real-time features, AI integrations, debugging issues, and solving practical problems through clean and maintainable code.
+           Full Stack Developer building scalable web applications, APIs, real-time systems, and AI-powered solutions using modern frontend, backend, database, and cloud technologies.
           </p>
         </div>
       </div>

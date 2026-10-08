@@ -1,4 +1,4 @@
-import { BarChart3, Code, Code2, Database, KeyRound, Layout, Network, Server, ShieldCheck, Wrench, Zap } from 'lucide-react';
+import { Code, Code2, Database, KeyRound, Layout, Network, Server, ShieldCheck, Wrench, Zap } from 'lucide-react';
 import {
   SiCplusplus,
   SiCss,
@@ -24,6 +24,13 @@ import {
   SiGooglegemini,
 } from 'react-icons/si';
 
+const GroqIcon = ({ className, style }) => (
+  <svg className={className} style={style} viewBox="0 0 33 33" aria-hidden="true">
+    <path fill="#F43E01" d="M.54.39h32v32h-32z" />
+    <path fill="#fff" d="m18.445 4.406-9.468 13.74 7.341.665-1.69 9.578 9.469-13.74-7.342-.664 1.69-9.579Z" />
+  </svg>
+);
+
 const skillIcons = {
   'JavaScript (ES6+)': { icon: SiJavascript, color: '#f7df1e' },
   TypeScript: { icon: SiTypescript, color: '#3178c6' },
@@ -33,15 +40,16 @@ const skillIcons = {
   React: { icon: SiReact, color: '#61dafb' },
   'Tailwind CSS': { icon: SiTailwindcss, color: '#06b6d4' },
   'Context API': { icon: Code2, color: '#a1a1aa' },
-  ' Recharts': { icon: BarChart3, color: '#a1a1aa' },
   'Node.js': { icon: SiNodedotjs, color: '#339933' },
   'Express.js': { icon: SiExpress, color: '#a1a1aa' },
   'REST APIs': { icon: Network, color: '#a1a1aa' },
   'JWT Authentication': { icon: KeyRound, color: '#a1a1aa' },
   RBAC: { icon: ShieldCheck, color: '#a1a1aa' },
   'Socket.IO': { icon: SiSocketdotio, color: '#a1a1aa' },
-  'Gemini API': { icon: SiGooglegemini, color: '#8e75b2' },
-  'Groq API': { icon: Zap, color: '#a1a1aa' },
+  'Gemini API': { icon: SiGooglegemini, color: '#4285f4' },
+  'Groq API': { icon: GroqIcon, color: '#f43e01' },
+  'LLM API Integration': { icon: Code2, color: '#a1a1aa' },
+  'Prompt Engineering': { icon: Code, color: '#a1a1aa' },
   MongoDB: { icon: SiMongodb, color: '#47a248' },
   Mongoose: { icon: SiMongoose, color: '#880000' },
   PostgreSQL: { icon: SiPostgresql, color: '#336791' },
@@ -68,12 +76,12 @@ const skillCategories = [
   {
     title: 'Frontend',
     icon: <Layout size={18} />,
-    skills: ['HTML', 'CSS', 'React', 'Tailwind CSS', 'Context API', ' Recharts'],
+    skills: ['HTML', 'CSS', 'React', 'Tailwind CSS', 'Context API'],
   },
   {
     title: 'Backend',
     icon: <Server size={18} />,
-    skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT Authentication', 'RBAC','Socket.IO', 'Gemini API', 'Groq API'],
+    skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT Authentication', 'RBAC', 'Socket.IO'],
   },
   {
     title: 'Databases & Caching',
@@ -83,7 +91,12 @@ const skillCategories = [
   {
     title: 'Tools & Platforms',
     icon: <Wrench size={18} />,
-    skills: ['Git', 'GitHub', 'Docker','Docker Compose', 'Postman', 'Redis Cloud', 'Vercel', 'Render'],
+    skills: ['Git', 'GitHub', 'Docker', 'Docker Compose', 'Postman', 'Redis Cloud', 'Vercel', 'Render'],
+  },
+  {
+    title: 'AI & GenAI',
+    icon: <Zap size={18} />,
+    skills: ['Gemini API', 'Groq API', 'LLM API Integration', 'Prompt Engineering'],
   },
 ];
 

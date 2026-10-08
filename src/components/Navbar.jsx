@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { name: 'Home', href: '#home' },
@@ -44,12 +43,13 @@ export default function Navbar() {
           <span className="nav__logo-accent">Suyal</span>
         </a>
 
-        {/* Mobile Backdrop */}
-        {isMenuOpen && (
-          <div className="nav__backdrop" onClick={closeMenu} aria-hidden="true" />
-        )}
+        <div
+          className={`nav__backdrop ${isMenuOpen ? 'show-backdrop' : ''}`}
+          onClick={closeMenu}
+          aria-hidden="true"
+        />
 
-        <div className={`nav__menu ${isMenuOpen ? 'show-menu' : ''}`}>
+        <div id="mobile-navigation" className={`nav__menu ${isMenuOpen ? 'show-menu' : ''}`}>
           <ul className="nav__list">
             {navItems.map(item => (
               <li key={item.name} className="nav__item">
@@ -63,21 +63,18 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <button
-            className="nav__close"
-            onClick={closeMenu}
-            aria-label="Close menu"
-          >
-            <X size={24} />
-          </button>
         </div>
 
         <button
-          className="nav__toggle"
+          className={`nav__toggle ${isMenuOpen ? 'is-open' : ''}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
         >
-          <Menu size={24} />
+          <span className="nav__toggle-line" />
+          <span className="nav__toggle-line" />
+          <span className="nav__toggle-line" />
         </button>
       </nav>
     </header>
