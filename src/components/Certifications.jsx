@@ -1,4 +1,4 @@
-import { Award, FolderOpen, Code2, ExternalLink } from 'lucide-react';
+import { Award, FolderOpen, Code2 } from 'lucide-react';
 import { SiLeetcode } from 'react-icons/si';
 
 export default function Certifications() {

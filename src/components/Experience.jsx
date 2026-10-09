@@ -17,7 +17,7 @@ export default function Experience() {
             <div className="timeline__content">
               <div className="timeline__header">
                 <div>
-                  <h3 className="timeline__role">MERN Stack Developer Intern</h3>
+                  <h3 className="timeline__role">Full Stack Developer Intern</h3>
                   <h4 className="timeline__company">
                     The Entrepreneurship Network <span className="timeline__type">• Remote</span>
                   </h4>

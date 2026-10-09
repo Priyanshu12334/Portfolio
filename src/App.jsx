@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Certifications from './components/Certifications';
@@ -12,6 +12,19 @@ import Footer from './components/Footer';
 
 export default function App() {
   useEffect(() => {
+    // Reset scroll restoration to manual so browser opens at the top on page refresh
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    // Always start at top of homepage on initial load or refresh
+    window.scrollTo(0, 0);
+
+    if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+
+    // Scroll reveal observer
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -38,8 +51,8 @@ export default function App() {
       <main className="main">
         <Hero />
         <About />
-        <Skills />
         <Projects />
+        <Skills />
         <Experience />
         <Education />
         <Certifications />

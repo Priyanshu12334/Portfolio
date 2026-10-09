@@ -10,7 +10,7 @@ export default function Footer() {
             <span className="nav__logo-accent">Suyal</span>
           </a>
           <p className="footer__desc">
-            Full Stack Developer specializing in MERN stack, focused on building modern, scalable, and high-performance web applications.
+            Full Stack Developer building modern web applications, backend systems, and exploring AI-powered solutions.
           </p>
         </div>
 

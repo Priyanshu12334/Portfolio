@@ -1,4 +1,4 @@
-import { Code, Code2, Database, KeyRound, Layout, Network, Server, ShieldCheck, Wrench, Zap } from 'lucide-react';
+import { Code, Layout, Server, Database, Wrench, Zap } from 'lucide-react';
 import {
   SiCplusplus,
   SiCss,
@@ -23,6 +23,7 @@ import {
   SiVercel,
   SiGooglegemini,
 } from 'react-icons/si';
+import { Code2, KeyRound, Network, ShieldCheck } from 'lucide-react';
 
 const GroqIcon = ({ className, style }) => (
   <svg className={className} style={style} viewBox="0 0 33 33" aria-hidden="true">
@@ -54,7 +55,6 @@ const skillIcons = {
   Mongoose: { icon: SiMongoose, color: '#880000' },
   PostgreSQL: { icon: SiPostgresql, color: '#336791' },
   MySQL: { icon: SiMysql, color: '#4479a1' },
-  SQL: { icon: Database, color: '#a1a1aa' },
   Redis: { icon: SiRedis, color: '#dc382d' },
   Git: { icon: SiGit, color: '#f05032' },
   GitHub: { icon: SiGithub, color: '#f0f6fc' },
@@ -84,19 +84,19 @@ const skillCategories = [
     skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT Authentication', 'RBAC', 'Socket.IO'],
   },
   {
-    title: 'Databases & Caching',
+    title: 'Databases',
     icon: <Database size={18} />,
-    skills: ['MongoDB', 'PostgreSQL', 'MySQL', 'SQL', 'Redis'],
+    skills: ['MongoDB', 'Mongoose', 'PostgreSQL', 'MySQL', 'Redis'],
   },
   {
-    title: 'Tools & Platforms',
+    title: 'DevOps & Tools',
     icon: <Wrench size={18} />,
     skills: ['Git', 'GitHub', 'Docker', 'Docker Compose', 'Postman', 'Redis Cloud', 'Vercel', 'Render'],
   },
   {
-    title: 'AI & GenAI',
+    title: 'AI / GenAI Integrations',
     icon: <Zap size={18} />,
-    skills: ['Gemini API', 'Groq API', 'LLM API Integration', 'Prompt Engineering'],
+    skills: ['Gemini API', 'Groq API', 'LLM API Integration'],
   },
 ];
 
@@ -106,10 +106,10 @@ export default function Skills() {
       <div className="container">
         <div className="section__header reveal">
           <span className="section__subtitle">Technical Expertise</span>
-          <h2 className="section__title">Skills</h2>
+          <h2 className="section__title">Technical Stack</h2>
         </div>
 
-        <div className="skills__grid skills__grid--compact">
+        <div className="skills__grid--compact">
           {skillCategories.map((cat) => (
             <div key={cat.title} className="skills__card skills__card--compact reveal">
               <div className="skills__card-header">

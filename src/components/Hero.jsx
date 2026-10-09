@@ -1,5 +1,6 @@
 import { Download, ArrowRight } from 'lucide-react';
 import { GitHubIcon, InstagramIcon, LinkedInIcon } from './SocialIcons';
+import Terminal from './Terminal';
 import myPhoto from '../assets/my.png';
 
 export default function Hero() {
@@ -7,16 +8,20 @@ export default function Hero() {
     <section className="hero section" id="home">
       <div className="hero__container container">
         <div className="hero__content">
+          {/* Greeting */}
+          <p className="hero__greeting">Hi, I'm Priyanshu 👋</p>
+
+          {/* Main title */}
           <h1 className="hero__title">
-            Hi, I'm <span className="nav__logo-accent">Priyanshu Suyal</span>
+            <span className="hero__title-line">FULL STACK</span>
+            <span className="hero__title-line hero__title-accent">DEVELOPER</span>
           </h1>
-          <h2 className="hero__subtitle">
-            Full Stack Developer <span className="hero__subtitle-separator">|</span> MERN Stack
-          </h2>
+
           <p className="hero__description">
-            B.Tech CSE Graduate and Full Stack Developer focused on building modern, scalable web applications with AI integration.
+            Building modern full-stack applications and backend systems, with an interest in practical AI integrations.
           </p>
 
+          {/* CTA Buttons */}
           <div className="hero__buttons">
             <a href="#projects" className="btn btn--primary">
               <span>View Projects</span>
@@ -33,8 +38,15 @@ export default function Hero() {
             </a>
           </div>
 
+          {/* Availability badge */}
+          <div className="hero__availability">
+            <span className="hero__avail-dot"></span>
+            <span>Open to Software Development Opportunities</span>
+          </div>
+
+          {/* Social links */}
           <div className="hero__social">
-            <span className="hero__social-title">Connect with me:</span>
+            <span className="hero__social-title">Connect:</span>
             <div className="hero__social-links">
               <a
                 href="https://www.linkedin.com/in/priyanshu-suyal-5732b224a/"
@@ -67,10 +79,17 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero__image-wrapper">
-          <div className="hero__image-container">
-            <img src={myPhoto} alt="Priyanshu Suyal" className="hero__img" />
+        {/* Right column: Photo + Interactive Terminal */}
+        <div className="hero__right">
+          {/* Profile photo */}
+          <div className="hero__image-wrapper">
+            <div className="hero__image-container">
+              <img src={myPhoto} alt="Priyanshu Suyal" className="hero__img" />
+            </div>
           </div>
+
+          {/* Interactive Terminal */}
+          <Terminal />
         </div>
       </div>
     </section>
