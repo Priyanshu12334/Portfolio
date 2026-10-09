@@ -6,8 +6,24 @@ const COMMANDS = {
   skills: 'Technical Stack: JavaScript, TypeScript, C++, React, Node.js, Express, MongoDB, Redis, Docker, PostgreSQL, Gemini & Groq APIs.',
   projects: 'Featured Projects: TaskPilot (Collaborative Task Management), Wellora (AI Health Companion), ChatCrypt (Realtime Chat Application).',
   contact: 'Email: suyalpriyanshu2@gmail.com | Phone: +91 8006084643 | Location: India',
+  experience: 'Work Experience: Full Stack Developer Intern at The Entrepreneurship Network (Remote) | Jul 2026 – Oct 2026 — built React, Node.js, Express & MongoDB apps with JWT/RBAC authentication.',
+  education: 'Education: B.Tech in Computer Science & Engineering (2022 – 2026) at Graphic Era Hill University, Bhimtal | CGPA: 7.35 / 10.',
+  certifications: 'Certifications: Full Stack Web Development (Udemy), SQL Bootcamp (Udemy), Front-End Software Engineering Job Simulation (Forage), AWS Cloud Practitioner Essentials (AWS).',
   whoami: 'user@priyanshu-portfolio:~$ Full Stack Developer open to software development opportunities.',
 };
+
+const AVAILABLE_COMMANDS = [...Object.keys(COMMANDS), 'clear'].join(', ');
+
+// Commands that also scroll to their matching portfolio section.
+const COMMAND_SECTIONS = [
+  'about',
+  'projects',
+  'skills',
+  'experience',
+  'education',
+  'certifications',
+  'contact',
+];
 
 const SECTION_SHORTCUTS = [
   { label: 'About', id: 'about' },
@@ -19,23 +35,81 @@ const SECTION_SHORTCUTS = [
   { label: 'Contact', id: 'contact' },
 ];
 
-const SECTION_COMMANDS = ['about', 'skills', 'projects', 'contact'];
+const INITIAL_HISTORY = [
+  {
+    type: 'code',
+    parts: [
+      { className: 'hero__terminal-key', text: 'const' },
+      { className: 'hero__terminal-val', text: ' developer' },
+      { className: 'hero__terminal-sep', text: ' = {' },
+    ],
+  },
+  {
+    type: 'code',
+    parts: [
+      { className: 'hero__terminal-key', text: '  name' },
+      { className: 'hero__terminal-sep', text: ': ' },
+      { className: 'hero__terminal-val', text: '"Priyanshu Suyal"' },
+      { className: 'hero__terminal-sep', text: ',' },
+    ],
+  },
+  {
+    type: 'code',
+    parts: [
+      { className: 'hero__terminal-key', text: '  role' },
+      { className: 'hero__terminal-sep', text: ': ' },
+      { className: 'hero__terminal-val', text: '"Full Stack Developer"' },
+      { className: 'hero__terminal-sep', text: ',' },
+    ],
+  },
+  {
+    type: 'code',
+    parts: [
+      { className: 'hero__terminal-key', text: '  focus' },
+      { className: 'hero__terminal-sep', text: ': ' },
+      { className: 'hero__terminal-val', text: '"Backend, Web Apps & AI Integrations"' },
+      { className: 'hero__terminal-sep', text: ',' },
+    ],
+  },
+  {
+    type: 'code',
+    lineClass: 'hero__terminal-line--stack',
+    parts: [
+      { className: 'hero__terminal-key', text: '  stack' },
+      { className: 'hero__terminal-sep', text: ': ' },
+      { className: 'hero__terminal-val', text: '["MERN", "PostgreSQL", "Redis", "Docker"]' },
+      { className: 'hero__terminal-sep', text: ',' },
+    ],
+  },
+  {
+    type: 'code',
+    parts: [{ className: 'hero__terminal-sep', text: '};' }],
+  },
+  { type: 'system', text: "Welcome to Priyanshu's developer terminal." },
+];
 
 export default function Terminal() {
   const [input, setInput] = useState('');
-  const [history, setHistory] = useState([
-    { type: 'info', key: 'name', label: 'name', value: '"Priyanshu Suyal"' },
-    { type: 'info', key: 'role', label: 'role', value: '"Full Stack Developer"' },
-    { type: 'info', key: 'focus', label: 'focus', value: '"Backend, Web Apps & AI Integrations"' },
-    { type: 'info', key: 'stack', label: 'stack', value: '["MERN", "PostgreSQL", "Redis", "Docker"]' },
-    { type: 'system', text: "Welcome to Priyanshu's developer terminal." },
-  ]);
+  const [history, setHistory] = useState(INITIAL_HISTORY);
 
-  const terminalEndRef = useRef(null);
+  const terminalOutputRef = useRef(null);
 
   useEffect(() => {
-    terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    const outputEl = terminalOutputRef.current;
+    if (outputEl) {
+      outputEl.scrollTop = outputEl.scrollHeight;
+    }
   }, [history]);
+
+  const scrollToSection = (id) => {
+    const sectionEl = document.getElementById(id);
+    if (sectionEl && typeof sectionEl.scrollIntoView === 'function') {
+      sectionEl.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
 
   const executeCommand = (cmdStr) => {
     const cleanCmd = cmdStr.trim().toLowerCase();
@@ -43,18 +117,11 @@ export default function Terminal() {
     if (!cleanCmd) return;
 
     if (cleanCmd === 'clear' || cleanCmd === 'reset') {
-      setHistory([
-        { type: 'info', key: 'name', label: 'name', value: '"Priyanshu Suyal"' },
-        { type: 'info', key: 'role', label: 'role', value: '"Full Stack Developer"' },
-        { type: 'info', key: 'focus', label: 'focus', value: '"Backend, Web Apps & AI Integrations"' },
-        { type: 'info', key: 'stack', label: 'stack', value: '["MERN", "PostgreSQL", "Redis", "Docker"]' },
-        { type: 'system', text: "Welcome to Priyanshu's developer terminal." },
-      ]);
-      setInput('');
+      clearTerminal();
       return;
     }
 
-    const output = COMMANDS[cleanCmd] || `Command not found: "${cleanCmd}". Available: about, skills, projects, contact, clear`;
+    const output = COMMANDS[cleanCmd] || `Command not found: "${cleanCmd}". Available: ${AVAILABLE_COMMANDS}`;
 
     setHistory((prev) => [
       ...prev,
@@ -62,15 +129,15 @@ export default function Terminal() {
       { type: 'output', text: output },
     ]);
 
-    if (SECTION_COMMANDS.includes(cleanCmd)) {
-      const el = document.getElementById(cleanCmd);
-      if (el) {
-        setTimeout(() => {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 200);
-      }
-    }
+    setInput('');
 
+    if (COMMAND_SECTIONS.includes(cleanCmd)) {
+      scrollToSection(cleanCmd);
+    }
+  };
+
+  const clearTerminal = () => {
+    setHistory(INITIAL_HISTORY);
     setInput('');
   };
 
@@ -87,12 +154,27 @@ export default function Terminal() {
         <span className="hero__terminal-dot hero__terminal-dot--green"></span>
         <span className="hero__terminal-title">
           <TerminalIcon size={12} />
-          dev.shell
+          developer.js
         </span>
+        <button type="button" className="hero__terminal-clear" onClick={clearTerminal}>
+          Clear
+        </button>
       </div>
 
       <div className="hero__terminal-body">
+        <div className="hero__terminal-output" ref={terminalOutputRef}>
         {history.map((item, idx) => {
+          if (item.type === 'code') {
+            return (
+              <div key={idx} className={`hero__terminal-line hero__terminal-line--info ${item.lineClass || ''}`}>
+                {item.parts.map((part, partIdx) => (
+                  <span key={partIdx} className={part.className}>
+                    {part.text}
+                  </span>
+                ))}
+              </div>
+            );
+          }
           if (item.type === 'info') {
             return (
               <div key={idx} className="hero__terminal-line hero__terminal-line--info">
@@ -122,6 +204,7 @@ export default function Terminal() {
             </div>
           );
         })}
+        </div>
 
         <form onSubmit={handleSubmit} className="hero__terminal-input-form">
           <span className="hero__terminal-prompt">$</span>
@@ -137,7 +220,6 @@ export default function Terminal() {
             <CornerDownLeft size={12} />
           </button>
         </form>
-        <div ref={terminalEndRef} />
       </div>
       <nav className="hero__terminal-quick" aria-label="Section shortcuts">
         {SECTION_SHORTCUTS.map(({ label, id }) => (
@@ -145,12 +227,7 @@ export default function Terminal() {
             key={id}
             type="button"
             className="hero__terminal-pill"
-            onClick={() => {
-              document.getElementById(id)?.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-              });
-            }}
+            onClick={() => scrollToSection(id)}
           >
             {label}
           </button>
