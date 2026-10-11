@@ -27,7 +27,7 @@ const projects = [
   {
     id: 'Wellora',
     title: 'Wellora',
-    tagline: 'AI Health Companion',
+    tagline: 'AI-Powered Health & Wellness Platform',
     problem: 'Medical reports are complex and inaccessible for most users, and personal health tracking is fragmented across multiple tools.',
     solution: 'Built an AI-powered health companion that simplifies medical reports, provides nutrition insights, and enables personal health tracking in one place.',
     image: aiHealthImg,
