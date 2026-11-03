@@ -2148,6 +2148,11 @@ section[id] {
 }
 
 @media screen and (max-width: 768px) {
+  .hero__terminal-line--out-profile {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
   .section { padding: 3.5rem 0; }
 
   .project__detail-panel-header {

@@ -140,7 +140,7 @@ export default function Terminal() {
     setHistory((prev) => [
       ...prev,
       { type: 'cmd', text: `$ ${cmdStr}` },
-      { type: 'output', text: output },
+      { type: 'output', text: output, command: cleanCmd },
     ]);
 
     setInput('');
@@ -207,7 +207,7 @@ export default function Terminal() {
           }
           if (item.type === 'output') {
             return (
-              <div key={idx} className="hero__terminal-line hero__terminal-line--out">
+              <div key={idx} className={`hero__terminal-line hero__terminal-line--out ${['help', 'whoami'].includes(item.command) ? 'hero__terminal-line--out-profile' : ''}`}>
                 <span className="hero__terminal-out-text" style={item.text.includes('\n') ? { whiteSpace: 'pre-line' } : undefined}>{item.text}</span>
               </div>
             );

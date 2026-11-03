@@ -22,7 +22,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero__description">
-            Building modern full-stack applications and backend systems, with an interest in practical AI integrations.
+            Building modern full-stack applications and backend systems, with a focus on practical AI integrations.
           </p>
 
           {/* CTA Buttons */}
