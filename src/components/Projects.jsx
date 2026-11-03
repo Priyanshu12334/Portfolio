@@ -4,8 +4,27 @@ import { SiGithub } from 'react-icons/si';
 import aiHealthImg from '../assets/ai-health.png';
 import chatAppImg from '../assets/chat-app.png';
 import TaskPilot from '../assets/taskpilot.png';
+import leadFlowImg from '../assets/LeadFlow.png';
 
 const projects = [
+  {
+    id: 'LeadFlow',
+    title: 'LeadFlow',
+    tagline: 'AI-Powered Lead Follow-Up Platform',
+    problem: 'Following up with leads from Google Sheets is repetitive and makes it difficult to personalize outreach while keeping track of drafts and review.',
+    solution: 'LeadFlow converts Google Sheets leads into personalized Gemini-generated Gmail drafts with per-user quotas and draft tracking. All emails require human review before sending.',
+    image: leadFlowImg,
+    tech: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'React Router', 'Axios', 'Node.js', 'Express', 'Google APIs', 'Gemini API', 'PostgreSQL', 'Prisma 7', 'Google OAuth 2.0', 'Encrypted Refresh Tokens'],
+    features: [
+      'Imports lead data from Google Sheets',
+      'Generates personalized Gmail drafts with Gemini AI',
+      'Tracks processed leads and per-user quotas',
+      'Human review before sending; never sends automatically',
+      'Google OAuth 2.0 with secure session cookies and encrypted refresh tokens',
+    ],
+    liveUrl: 'https://get-ai-leadflow.vercel.app',
+    githubUrl: 'https://github.com/Priyanshu12334/leadflow-ai',
+  },
   {
     id: 'TaskPilot',
     title: 'TaskPilot',
@@ -60,6 +79,16 @@ const projects = [
   },
 ];
 
+function Amp() {
+  return <span className="amp">&amp;</span>;
+}
+
+function renderAmpersands(text) {
+  return text.split('&').flatMap((part, index) => (
+    index === 0 ? [part] : [<Amp key={`${index}-${part}`} />, part]
+  ));
+}
+
 export default function Projects() {
   const [openDetails, setOpenDetails] = useState({});
   const [mountedDetails, setMountedDetails] = useState({});
@@ -84,10 +113,9 @@ export default function Projects() {
 
   const toggleDetail = (projectId, detail) => {
     const isClosing = openDetails[projectId] === detail;
-    setOpenDetails((current) => ({
-      ...current,
-      [projectId]: current[projectId] === detail ? null : detail,
-    }));
+    setOpenDetails(Object.fromEntries(
+      projects.map(({ id }) => [id, id === projectId && !isClosing ? detail : null]),
+    ));
 
     if (isClosing) {
       setVisibleDetails((current) => ({ ...current, [projectId]: null }));
@@ -95,6 +123,9 @@ export default function Projects() {
         setMountedDetails((current) => ({ ...current, [projectId]: null }));
       }
     } else {
+      setVisibleDetails((current) => Object.fromEntries(
+        Object.keys(current).map((id) => [id, null]),
+      ));
       setMountedDetails((current) => ({ ...current, [projectId]: detail }));
     }
   };
@@ -112,29 +143,26 @@ export default function Projects() {
             <article
               key={project.id}
               className="project__card reveal"
-              style={{ zIndex: openDetails[project.id] ? 10 : undefined }}
             >
               {/* Screenshot */}
               <div className="project__img-container">
                 <img
                   src={project.image}
                   alt={`${project.title} screenshot`}
-                  className={`project__img ${project.id === 'Wellora' ? 'project__img--wellora' : ''} ${project.id === 'ChatCrypt' ? 'project__img--chatcrypt' : ''}`}
+                  className="project__img"
                 />
               </div>
 
               <div className="project__content">
                 <div className="project__title-block">
                   <h3 id={`${project.id}-title`} className="project__title">{project.title}</h3>
-                  <p className="project__tagline">{project.tagline}</p>
+                  <p className="project__tagline">{renderAmpersands(project.tagline)}</p>
                 </div>
 
                 <div
-                  className={`project__detail-actions ${openDetails[project.id] ? 'is-hidden' : ''}`}
+                  className="project__detail-actions"
                   role="group"
                   aria-label={`${project.title} details`}
-                  aria-hidden={Boolean(openDetails[project.id])}
-                  inert={openDetails[project.id] ? '' : undefined}
                 >
                   {[
                     { id: 'problem', label: 'Problem & Solution' },
@@ -152,31 +180,10 @@ export default function Projects() {
                         aria-controls={`${project.id}-detail-panel`}
                         onClick={() => toggleDetail(project.id, id)}
                       >
-                        {label}
+                        <span className="project__detail-label">{renderAmpersands(label)}</span>
                       </button>
                     );
                   })}
-                </div>
-
-                <div className="project__links">
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn--small btn--primary"
-                  >
-                    <ExternalLink size={15} />
-                    Live Demo
-                  </a>
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn--small btn--outline"
-                  >
-                    <SiGithub size={15} color="#f0f6fc" />
-                    GitHub
-                  </a>
                 </div>
 
                 <div
@@ -202,7 +209,7 @@ export default function Projects() {
                     <>
                       <div className="project__detail-panel-header">
                         <h4 className="project__detail-panel-title">
-                          {mountedDetails[project.id] === 'problem' && 'Problem & Solution'}
+                          {mountedDetails[project.id] === 'problem' && renderAmpersands('Problem & Solution')}
                           {mountedDetails[project.id] === 'features' && 'Key Features'}
                           {mountedDetails[project.id] === 'tech' && 'Tech Stack'}
                         </h4>
@@ -235,7 +242,7 @@ export default function Projects() {
                             {project.features.map((feature) => (
                               <li key={feature} className="project__feature-item">
                                 <span className="project__feature-dot" aria-hidden="true" />
-                                {feature}
+                                {renderAmpersands(feature)}
                               </li>
                             ))}
                           </ul>
@@ -251,6 +258,27 @@ export default function Projects() {
                       )}
                     </>
                   )}
+                </div>
+
+                <div className="project__links">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn--small btn--primary"
+                  >
+                    <ExternalLink size={15} />
+                    Live Demo
+                  </a>
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn--small btn--outline"
+                  >
+                    <SiGithub size={15} color="#f0f6fc" />
+                    GitHub
+                  </a>
                 </div>
               </div>
             </article>
