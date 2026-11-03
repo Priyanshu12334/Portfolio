@@ -9,7 +9,12 @@ export default function Hero() {
       <div className="hero__container container">
         <div className="hero__content">
           {/* Greeting */}
-          <p className="hero__greeting">Hi, I'm Priyanshu 👋</p>
+          <p className="hero__greeting">
+            <span className="hero__greeting-comment" aria-hidden="true">//</span>{' '}
+            <span>Hi, I'm </span>
+            <span className="hero__greeting-name">Priyanshu Suyal</span>
+            <span className="hero__greeting-cursor" aria-hidden="true">_</span>
+          </p>
 
           {/* Main title */}
           <h1 className="hero__title">

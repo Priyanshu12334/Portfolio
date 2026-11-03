@@ -352,10 +352,30 @@ section[id] {
 }
 
 .hero__greeting {
-  font-size: clamp(1rem, 3vw, 1.2rem);
-  font-weight: 600;
-  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: clamp(0.82rem, 2vw, 1.125rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
+  white-space: nowrap;
+}
+
+.hero__greeting-comment {
+  color: #7d8590;
+}
+
+.hero__greeting-name {
+  color: #3B82F6;
+}
+
+.hero__greeting-cursor {
+  color: #3B82F6;
+  animation: hero-cursor-blink 1s steps(2, start) infinite;
+}
+
+@keyframes hero-cursor-blink {
+  to { visibility: hidden; }
 }
 
 .hero__title {
@@ -724,7 +744,8 @@ section[id] {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: start;
-  gap: 20px;
+  column-gap: 26px;
+  row-gap: 30px;
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
@@ -869,7 +890,7 @@ section[id] {
 
 @media screen and (min-width: 1025px) {
   .projects__grid {
-    column-gap: 20px;
+    column-gap: 26px;
   }
 
   .project__img-container {
@@ -2211,7 +2232,7 @@ section[id] {
 
   .projects__grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    row-gap: 30px;
   }
 
   .skills__grid--compact {
