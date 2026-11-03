@@ -10,7 +10,6 @@ export default function Hero() {
         <div className="hero__content">
           {/* Greeting */}
           <p className="hero__greeting">
-            <span className="hero__greeting-comment" aria-hidden="true">//</span>{' '}
             <span>Hi, I'm </span>
             <span className="hero__greeting-name">Priyanshu Suyal</span>
             <span className="hero__greeting-cursor" aria-hidden="true">_</span>
@@ -33,7 +32,7 @@ export default function Hero() {
               <ArrowRight size={18} />
             </a>
             <a
-              href="https://drive.google.com/drive/folders/1Q5iW9xkbe3qHwIKXX1kCIfH0_J5oH2cn?usp=drive_link"
+              href="https://drive.google.com/drive/folders/1DP1ovY8CbLc8TlqwrJqB-wwx6JzftZz9"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn--outline"

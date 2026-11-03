@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Terminal as TerminalIcon, CornerDownLeft } from 'lucide-react';
 
 const COMMANDS = {
+  help: 'Commands:\nwhoami — Developer intro\nresume — Open my resume\ngithub — Open my GitHub profile\nlinkedin — Open my LinkedIn profile\nabout — About section\nprojects — Projects section\nskills — Skills section\nexperience — Experience section\neducation — Education section\ncertifications — Certifications section\ncontact — Contact section\nclear — Clear terminal',
   about: 'Priyanshu Suyal — Full Stack Developer & B.Tech CSE Graduate building modern web applications, APIs & backend systems.',
   skills: 'Technical Stack: JavaScript, TypeScript, C++, React, Node.js, Express, MongoDB, Redis, Docker, PostgreSQL, Gemini & Groq APIs.',
   projects: 'Featured Projects: TaskPilot (Collaborative Task Management), Wellora (AI Health Companion), ChatCrypt (Realtime Chat Application).',
@@ -9,10 +10,16 @@ const COMMANDS = {
   experience: 'Work Experience: Full Stack Developer Intern at The Entrepreneurship Network (Remote) | Jul 2026 – Oct 2026 — built React, Node.js, Express & MongoDB apps with JWT/RBAC authentication.',
   education: 'Education: B.Tech in Computer Science & Engineering (2022 – 2026) at Graphic Era Hill University, Bhimtal | CGPA: 7.35 / 10.',
   certifications: 'Certifications: Full Stack Web Development (Udemy), SQL Bootcamp (Udemy), Front-End Software Engineering Job Simulation (Forage), AWS Cloud Practitioner Essentials (AWS).',
-  whoami: 'user@priyanshu-portfolio:~$ Full Stack Developer open to software development opportunities.',
+  whoami: 'Priyanshu Suyal\nFull Stack Developer | B.Tech CSE Graduate\nFocused on Backend Development & AI Integrations.\nOpen to Software Development Opportunities.',
 };
 
 const AVAILABLE_COMMANDS = [...Object.keys(COMMANDS), 'clear'].join(', ');
+
+const EXTERNAL_COMMANDS = {
+  resume: 'https://drive.google.com/drive/folders/1DP1ovY8CbLc8TlqwrJqB-wwx6JzftZz9',
+  github: 'https://github.com/Priyanshu12334',
+  linkedin: 'https://www.linkedin.com/in/priyanshu-suyal-5732b224a/',
+};
 
 // Commands that also scroll to their matching portfolio section.
 const COMMAND_SECTIONS = [
@@ -26,6 +33,7 @@ const COMMAND_SECTIONS = [
 ];
 
 const SECTION_SHORTCUTS = [
+  { label: 'Help', id: 'help' },
   { label: 'About', id: 'about' },
   { label: 'Projects', id: 'projects' },
   { label: 'Skills', id: 'skills' },
@@ -121,7 +129,13 @@ export default function Terminal() {
       return;
     }
 
-    const output = COMMANDS[cleanCmd] || `Command not found: "${cleanCmd}". Available: ${AVAILABLE_COMMANDS}`;
+    if (EXTERNAL_COMMANDS[cleanCmd]) {
+      window.open(EXTERNAL_COMMANDS[cleanCmd], '_blank', 'noopener,noreferrer');
+    }
+
+    const output = EXTERNAL_COMMANDS[cleanCmd]
+      ? `Opening ${cleanCmd}...`
+      : COMMANDS[cleanCmd] || `Command not found: "${cleanCmd}". Available: ${AVAILABLE_COMMANDS}`;
 
     setHistory((prev) => [
       ...prev,
@@ -194,7 +208,7 @@ export default function Terminal() {
           if (item.type === 'output') {
             return (
               <div key={idx} className="hero__terminal-line hero__terminal-line--out">
-                <span className="hero__terminal-out-text">{item.text}</span>
+                <span className="hero__terminal-out-text" style={item.text.includes('\n') ? { whiteSpace: 'pre-line' } : undefined}>{item.text}</span>
               </div>
             );
           }
@@ -227,7 +241,7 @@ export default function Terminal() {
             key={id}
             type="button"
             className="hero__terminal-pill"
-            onClick={() => scrollToSection(id)}
+            onClick={() => (id === 'help' ? executeCommand('help') : scrollToSection(id))}
           >
             {label}
           </button>
